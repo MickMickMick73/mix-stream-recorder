@@ -1,112 +1,102 @@
 # MiX Stream Recorder
 
-**Simple local screen + webcam recorder.** One lean MP4. No account. No watermark. No cloud.
+### Record your screen (and webcam) into **one small video file**.
 
-Built for the days you want OBS’s *result* without OBS’s *cockpit*.
-
-| | |
-|---|---|
-| **Platform** | Windows 10/11 (Python) |
-| **License** | MIT |
-| **Cost** | Free |
-| **Telemetry** | None — runs fully offline |
+Free · Windows · No account · No watermark · No cloud nonsense
 
 ---
 
-## What it does
+## 👉 Do this (normal humans)
 
-- Record **monitor** + **plug-in camera** into **one file**
-- Layouts: PiP (corners), side-by-side, screen only, camera only
-- Controls: **FPS**, **resolution**, **quality** (Lean by default)
-- Prefer **hardware encode** (NVENC / AMF / QSV) when available → small files, low CPU
-- Live preview, timer, size estimate (MB/min)
-- Built-in list + **playback** of recordings
+### 1. Download the app
 
-**Real-world example:** ~5 minutes of usable quality ≈ **~23 MB** on Lean + NVENC (your mileage varies by motion/resolution).
+**[⬇ Download MiX Stream Recorder (ZIP)](https://github.com/MickMickMick73/mix-stream-recorder/releases/latest/download/MiX-Stream-Recorder-Windows.zip)**
 
----
+*(If that fails, open [Releases](https://github.com/MickMickMick73/mix-stream-recorder/releases/latest) and click the `.zip` file.)*
 
-## Requirements
+### 2. One-time free setup (only the first time on a PC)
 
-1. **Python 3.10+**  
-2. **ffmpeg** on PATH  
-   ```powershell
-   winget install Gyan.FFmpeg
-   ```
-   Then open a **new** terminal so PATH updates.
+You need two free tools Windows does not include:
 
----
+| Install | What to do |
+|--------|------------|
+| **Python** | [Download Python](https://www.python.org/downloads/) → run installer → **tick “Add python.exe to PATH”** → Install |
+| **ffmpeg** | Open **PowerShell** and run: `winget install Gyan.FFmpeg` then **close and reopen** any windows |
 
-## Install & run
+### 3. Run it
 
-```powershell
-git clone https://github.com/MickMickMick73/mix-stream-recorder.git
-cd mix-stream-recorder
-python -m pip install -r requirements.txt
-python app.py
-```
+1. Unzip the download anywhere (Desktop is fine)
+2. Double-click **`run.bat`**
+3. Click **Start preview** → **Record** → **Stop** when done
 
-Or double-click **`run.bat`** (installs deps if needed, then launches).
+Your videos appear in the **`recordings`** folder next to the app.
 
-Recordings land in `recordings/`.
+**That’s the whole product.** You can close this GitHub page and never come back unless you want an update.
 
 ---
 
-## Quality tips (anti-bloat)
+## What it does (in plain English)
 
-| Setting | Suggestion |
-|---------|------------|
-| Quality | **Lean** for everyday; Balanced if you need sharper text |
-| FPS | **30** is enough for desktop/tutorials |
-| Resolution | **1080p** sweet spot |
-| Encoder | **auto** (uses NVENC etc. when present) |
+| Feature | Meaning |
+|--------|---------|
+| Screen capture | Records a monitor (or both) |
+| Webcam / plug-in cam | Optional face cam on top (picture-in-picture) or side-by-side |
+| One file out | Saves a normal **MP4** you can play anywhere |
+| Small files | “Lean” quality keeps size down (example: ~5 min ≈ ~23 MB) |
+| Settings | FPS, resolution, quality — optional knobs, sensible defaults |
+| Playback | Built-in list + play of what you just made |
 
-Avoid **Archive + 60fps + 1440p** unless you need a master archive.
+**Not** a Twitch streamer suite. **Not** OBS. Just “hit record, get a video.”
 
 ---
 
-## Project layout
+## You do **not** need
 
-```
-mix-stream-recorder/
-  app.py           # UI
-  capture.py       # Screen + camera composite
-  encoder.py       # ffmpeg lean H.264 pipe
-  smoke_test.py    # Non-GUI smoke
-  run.bat          # Windows launcher
-  requirements.txt
-  recordings/      # Output folder (gitignored)
-```
+- Git  
+- A GitHub account  
+- To understand any of the files listed below on this page  
+- To “clone” anything  
 
-```powershell
-python smoke_test.py
-```
+GitHub is only the **download shelf**. The app runs on **your PC**.
+
+---
+
+## Troubleshooting (short)
+
+| Problem | Fix |
+|--------|-----|
+| `python` not found | Reinstall Python and tick **Add to PATH** |
+| Recording fails / encoder error | Install ffmpeg (`winget install Gyan.FFmpeg`), then open a **new** window and run `run.bat` again |
+| No camera | Fine — pick **Screen only**, or plug cam in and hit **Rescan devices** |
+| Black preview | Click **Start preview**; allow camera if Windows asks |
 
 ---
 
 ## Privacy
 
-- No analytics, accounts, or network calls from the app itself  
-- Files stay on your machine under `recordings/`  
-- Camera probe is local only  
+- Runs **offline**
+- No login
+- Videos stay in your `recordings` folder
+- We don’t get a copy of your screen
 
 ---
 
-## Related free tools
+## For developers only (ignore if you just want the app)
 
-If you need full streaming scenes and plugins, use **[OBS Studio](https://obsproject.com/)**.  
-If you want a small Windows utility belt (screenshots + capture), try **[ShareX](https://getsharex.com/)**.  
+```text
+git clone https://github.com/MickMickMick73/mix-stream-recorder.git
+cd mix-stream-recorder
+python -m pip install -r requirements.txt
+python app.py
+python smoke_test.py
+```
 
-This project is the middle ground: **focused recorder, sensible defaults.**
+Source layout: `app.py` (UI), `capture.py`, `encoder.py`, `run.bat`.  
+License: [MIT](LICENSE).
+
+Related: [OBS Studio](https://obsproject.com/) (full studio) · [ShareX](https://getsharex.com/) (Windows utility belt).
 
 ---
 
-## License
-
-MIT — see [LICENSE](LICENSE).
-
----
-
-## Credits
-
-**MiX Apps** — built for practical day-to-day capture, not engagement metrics.
+**MiX Apps** — useful tools, not engagement bait.  
+Friendly landing page: **https://mickmickmick73.github.io/mix-stream-recorder/**

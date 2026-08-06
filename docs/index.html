@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MiX Stream Recorder — free screen + webcam recorder</title>
+  <meta name="description" content="Free Windows app: record screen and webcam into one small MP4. No account, no watermark." />
+  <style>
+    :root {
+      --bg: #0f1218;
+      --card: #171b24;
+      --text: #e8ecf4;
+      --muted: #9aa3b5;
+      --accent: #3d9cf0;
+      --accent2: #2d8a4e;
+      --warn: #c9a227;
+      --border: #2a3140;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, #1a2740 0%, var(--bg) 55%);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin: 0 0 0.4rem; letter-spacing: -0.02em; }
+    .tag { color: var(--muted); font-size: 1.05rem; margin-bottom: 1.75rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.35rem;
+      margin: 1rem 0;
+    }
+    .card h2 { margin: 0 0 0.75rem; font-size: 1.1rem; }
+    ol, ul { margin: 0.4rem 0 0; padding-left: 1.25rem; }
+    li { margin: 0.45rem 0; }
+    .btn {
+      display: inline-block;
+      background: var(--accent2);
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.9rem 1.35rem;
+      border-radius: 10px;
+      margin: 0.35rem 0.5rem 0.35rem 0;
+      box-shadow: 0 6px 20px rgba(45, 138, 78, 0.35);
+    }
+    .btn:hover { filter: brightness(1.08); }
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text) !important;
+      box-shadow: none;
+      font-weight: 600;
+    }
+    a { color: var(--accent); }
+    .muted { color: var(--muted); font-size: 0.95rem; }
+    .step-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.6rem; height: 1.6rem; border-radius: 999px;
+      background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem;
+      margin-right: 0.4rem;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    td, th { text-align: left; padding: 0.45rem 0.35rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; }
+    footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.9rem; }
+    code {
+      background: #0c0e14; padding: 0.15rem 0.4rem; border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>MiX Stream Recorder</h1>
+    <p class="tag">Record your screen + webcam into <strong>one small video</strong>. Free. Offline. No account.</p>
+
+    <div class="card" style="border-color: #2d8a4e55;">
+      <h2>Get the app</h2>
+      <a class="btn" href="https://github.com/MickMickMick73/mix-stream-recorder/releases/latest/download/MiX-Stream-Recorder-Windows.zip">
+        Download for Windows (ZIP)
+      </a>
+      <a class="btn secondary" href="https://github.com/MickMickMick73/mix-stream-recorder/releases/latest">
+        All releases
+      </a>
+      <p class="muted" style="margin: 0.9rem 0 0;">Unzip anywhere. You do not need a GitHub account.</p>
+    </div>
+
+    <div class="card">
+      <h2>First time on this PC (once)</h2>
+      <ol>
+        <li>
+          <strong>Python</strong> —
+          <a href="https://www.python.org/downloads/" rel="noopener">Download Python</a>
+          and tick <em>Add python.exe to PATH</em> during install.
+        </li>
+        <li>
+          <strong>ffmpeg</strong> — open PowerShell and run:<br />
+          <code>winget install Gyan.FFmpeg</code><br />
+          then close that window.
+        </li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Every time after that</h2>
+      <p>
+        <span class="step-num">1</span> Double-click <code>run.bat</code><br />
+        <span class="step-num">2</span> <strong>Start preview</strong> → <strong>Record</strong> → <strong>Stop</strong><br />
+        <span class="step-num">3</span> Open the <code>recordings</code> folder for your MP4
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>What you get</h2>
+      <table>
+        <tr><th>Screen</th><td>One monitor or both</td></tr>
+        <tr><th>Webcam</th><td>Optional PiP or side-by-side</td></tr>
+        <tr><th>Output</th><td>One normal MP4 (kept lean so files stay small)</td></tr>
+        <tr><th>Example</th><td>~5 minutes ≈ ~23 MB on Lean quality</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Not working?</h2>
+      <ul>
+        <li><code>python</code> not found → reinstall Python with PATH ticked</li>
+        <li>Encode errors → install ffmpeg, open a <em>new</em> window, run again</li>
+        <li>No camera → use Screen only, or Rescan devices after plugging in</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>MiX Apps · MIT license · Runs fully offline · Source on
+        <a href="https://github.com/MickMickMick73/mix-stream-recorder">GitHub</a>
+        (only if you care about code).
+      </p>
+      <p class="muted">This page exists because GitHub’s default repo view is written for developers, not people who just want a recorder.</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+========================================
+  MiX Stream Recorder — START HERE
+========================================
+
+WHAT THIS IS
+  Record your screen + optional webcam into ONE small MP4 file.
+  No account. No watermark. No cloud.
+
+----------------------------------------
+STEP 1 — ONE-TIME SETUP (first PC only)
+----------------------------------------
+  A) Install Python from https://www.python.org/downloads/
+     IMPORTANT: tick "Add python.exe to PATH"
+
+  B) Install ffmpeg:
+     Open PowerShell and run:
+        winget install Gyan.FFmpeg
+     Then close PowerShell.
+
+----------------------------------------
+STEP 2 — RUN THE APP
+----------------------------------------
+  Double-click:  run.bat
+
+  Then in the app:
+    Start preview  →  Record  →  Stop
+
+  Videos are saved in the "recordings" folder.
+
+----------------------------------------
+UPDATES
+----------------------------------------
+  Download the newest ZIP from:
+  https://github.com/MickMickMick73/mix-stream-recorder/releases/latest
+
+You can ignore everything else on GitHub.
+========================================

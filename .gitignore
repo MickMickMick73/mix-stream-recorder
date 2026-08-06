@@ -33,3 +33,6 @@ smoke_err.txt
 # Local test dumps
 _smoke_test.mp4
 _diag.mp4
+
+# Release packaging output
+dist/
