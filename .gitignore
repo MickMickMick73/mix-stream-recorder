@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# App output & local noise (never ship user recordings)
+recordings/*
+!recordings/.gitkeep
+*.mp4
+*.mkv
+*.avi
+*.mov
+diag_stderr.txt
+smoke_err.txt
+*.log
+
+# Local test dumps
+_smoke_test.mp4
+_diag.mp4
