@@ -22,24 +22,18 @@ git status
 git commit -m "Initial release: MiX Stream Recorder"
 
 git branch -M main
-git remote add origin https://github.com/YOUR_USER/mix-stream-recorder.git
+git remote add origin https://github.com/MickMickMick73/mix-stream-recorder.git
 git push -u origin main
 ```
 
-Replace `YOUR_USER` with your GitHub username.
+**Live repo:** https://github.com/MickMickMick73/mix-stream-recorder  
 
-## 3. Fix the clone URL in README
+Auth: PAT from monorepo `secrets/github-token.txt` (never commit).
 
-Edit `README.md` and replace:
-
-`https://github.com/YOUR_USER/mix-stream-recorder.git`
-
-with your real URL.
-
-## 4. Optional X / site blurb
+## 3. Optional X / site blurb
 
 > Free local screen + webcam recorder. Lean MP4s, no account, no watermark.  
-> https://github.com/YOUR_USER/mix-stream-recorder
+> https://github.com/MickMickMick73/mix-stream-recorder
 
 ## Notes
 

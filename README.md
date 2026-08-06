@@ -40,7 +40,7 @@ Built for the days you want OBS’s *result* without OBS’s *cockpit*.
 ## Install & run
 
 ```powershell
-git clone https://github.com/YOUR_USER/mix-stream-recorder.git
+git clone https://github.com/MickMickMick73/mix-stream-recorder.git
 cd mix-stream-recorder
 python -m pip install -r requirements.txt
 python app.py
